@@ -11,14 +11,33 @@
 #include <string>    // std::string, std::getline
 #include <vector>    // std::vector
 
-std::vector<int> createSecret() {
+std::vector<int> createSecret()
+{
     // Write this procedure here
-    return {};    // replace this with your code
+    // srand(time(0));    // seeds our random number generator
+    int a = rand() % 10;    // random number between 0 and 9
+
+    // srand(time(0));    
+    b = rand() % 10; 
+
+    // srand(time(0));    
+    c = rand() % 10; 
+
+    // srand(time(0));    
+    c = rand() % 10; 
+
+    return (createSecret);    // replace this with your code
 }
 
 std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess) {
-    // Write this procedure here
-    return {"X", "X", "X", "X"};    // replace this with your code
+    if (true)
+    {
+        std::cout << 
+    }
+    else
+    {
+        return {"X", "X", "X", "X"};    // replace this with your code
+    }
 }
 
 bool winGame(std::vector<int> secret, std::vector<int> guess) {
@@ -31,7 +50,7 @@ int main()
     // Seeding the random number generator
     // Uncomment the code when you are finished testing your program
     // and want to have the program run for real
-    // srand(time(0));
+    srand(time(0));
     
     std::vector<int> secret_code = createSecret();
     std::vector<int> user_guess = {};
