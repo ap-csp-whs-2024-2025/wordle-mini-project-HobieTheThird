@@ -13,20 +13,17 @@
 
 std::vector<int> createSecret()
 {
-    // Write this procedure here
-    // srand(time(0));    // seeds our random number generator
-    int a = rand() % 10;    // random number between 0 and 9
+    int a = rand() % 10; 
+    int b = rand() % 10; 
+    int c = rand() % 10;  
+    int d = rand() % 10; 
 
-    // srand(time(0));    
-    b = rand() % 10; 
+    createSecret.push_back(a);
+    createSecret.push_back(b);
+    createSecret.push_back(c);
+    createSecret.push_back(d);
 
-    // srand(time(0));    
-    c = rand() % 10; 
-
-    // srand(time(0));    
-    c = rand() % 10; 
-
-    return (createSecret);    // replace this with your code
+    return (0); 
 }
 
 std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess) {
