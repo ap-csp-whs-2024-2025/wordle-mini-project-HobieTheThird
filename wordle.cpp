@@ -26,15 +26,30 @@ std::vector<int> createSecret()
     return (0); 
 }
 
-std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess) {
-    if (true)
+std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess) 
+{
+    std::cin >> int input1 >> int input2 >> int input3 >> int >> int input4;
+    guess.push_back(input1);
+    guess.push_back(input2);
+    guess.push_back(input3);
+    guess.push_back(input4);
+
+    while (secret.size(4))
     {
-        std::cout << 
+    secret.push_back(x);
+    }
+    if (createSecret==guess)
+    {
+        for(4)
+        {
+        secret.push_back(o);
+        }
     }
     else
     {
-        return {"X", "X", "X", "X"};    // replace this with your code
+
     }
+
 }
 
 bool winGame(std::vector<int> secret, std::vector<int> guess) {
