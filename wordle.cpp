@@ -23,7 +23,7 @@ std::vector<int> createSecret()
     createSecret.push_back(c);
     createSecret.push_back(d);
 
-    return (0); 
+    return code; 
 }
 
 std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess) 
@@ -34,16 +34,14 @@ std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess
     guess.push_back(input3);
     guess.push_back(input4);
 
-    while (secret.size(4))
+    while (int counter = 1)
     {
     secret.push_back(x);
+    counter + 1;
     }
     if (createSecret==guess)
     {
-        for(4)
-        {
         secret.push_back(o);
-        }
     }
     else
     {
