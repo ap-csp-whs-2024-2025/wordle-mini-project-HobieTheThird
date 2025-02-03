@@ -14,22 +14,36 @@
 std::vector<int> createSecret()
 {
     std::vector<int> answer;
-    std::srand(std::time(0));
     for (int input = 9; input < 4; input++)
     {
-        secret.push_back((std::srand() % 9)+1);
+        answer.push_back((std::rand() % 10)+1);
     }
-    return secret;
+    return answer;
 }
 
-std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess) 
+std::string getHint(std::vector<int> secret, std::vector<int> guess) 
 {
+    if (secret.size() != guess.size()) 
+    {
+    std::cout << "Error: Lists are of different sizes!";
+    }
     
+    std::string result = ""; // Compare the elements of both lists
+    for (int i = 0; i < secret.size(); ++i) 
+    {
+        if (secret[i] == guess[i]) {
+            result += "O";  // Correct match
+        } else {
+            result += "X";  // Incorrect match
+        }
+    }
+
+    return result;   
 }
+
 
 bool winGame(std::vector<int> secret, std::vector<int> guess) {
-
-   // replace this with your code
+    return true; // If all elements match, return true
 }
 
 int main()
@@ -41,7 +55,7 @@ int main()
     
     std::vector<int> secret_code = createSecret();
     std::vector<int> user_guess = {-1, -1, -1, -1};
-    std::vector<std::string> hint = {};    // an empty list
+    std::string hint = "";    // an empty list
 
     int secret_code_length = 4;
     int num_guesses = 0;
@@ -51,16 +65,16 @@ int main()
     while (!winGame(secret_code, user_guess))    // while you have not won the game yet
     {
         std::cout << "\nEnter your guess: ";
-        hint = {};    // reset the hint for the next guess
+        user_guess = {};    // reset the hint for the next guess
         for (int counter = 0; counter < secret_code_length; counter = counter + 1)
         {
             int input;
             std::cin >> input;
-            guess.push_back(input);    // can also do append(guess, input);
+            user_guess.push_back(input);    // can also do append(guess, input);
         }
 
         hint = getHint(secret_code, user_guess);
-        display(hint);
+        std::cout << hint << "\n";
         num_guesses = num_guesses + 1;
     }
 
