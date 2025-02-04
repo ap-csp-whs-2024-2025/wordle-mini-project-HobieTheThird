@@ -14,10 +14,12 @@
 std::vector<int> createSecret()
 {
     std::vector<int> answer;
-    for (int input = 9; input < 4; input++)
+    for (int input = 0; input < 4; input++)
     {
         answer.push_back((std::rand() % 10)+1);
     }
+    // std::cout << "In here\n";
+    // display(answer);
     return answer;
 }
 
@@ -42,8 +44,9 @@ std::string getHint(std::vector<int> secret, std::vector<int> guess)
 }
 
 
-bool winGame(std::vector<int> secret, std::vector<int> guess) {
-    return true; // If all elements match, return true
+bool winGame(std::vector<int> secret, std::vector<int> guess) 
+{
+    return secret == guess;
 }
 
 int main()
@@ -73,6 +76,8 @@ int main()
             user_guess.push_back(input);    // can also do append(guess, input);
         }
 
+        // display(secret_code);
+        // display(user_guess);
         hint = getHint(secret_code, user_guess);
         std::cout << hint << "\n";
         num_guesses = num_guesses + 1;
